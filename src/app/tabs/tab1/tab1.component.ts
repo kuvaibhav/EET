@@ -11,6 +11,7 @@ export class Tab1Component implements OnInit {
   itemArray = [];
   buttonText = 'ADD';
   clearText = 'Remove';
+  name = '';
 
   constructor() { }
 
