@@ -13,28 +13,26 @@
 </div>
 
 <!-- uncomment to show ngIf and ngFor -->
-<!-- <div class="mt-3" *ngFor="let item of itemArray; let i = index">
+<div class="mt-3" *ngFor="let item of itemArray; let i = index">
 <div class="row mt-3"  *ngIf="item">
-  <div class="col-md-1 offset-md-3 text-size">
+  <div class="col-md-1 offset-md-3">
     {{item}}
   </div>
   <div class="col-md-1">
-    <button class="btn btn-info" (click)="removeItem(i)">{{clearText}}</button>
+    <button class="btn btn-info btn-sm" (click)="removeItem(i)">{{clearText}}</button>
   </div>
 </div>
-</div> -->
-
-
-<!-- uncomment to show ngModel example-->
-
-<!-- <hr>
-<div class="row">
-  <div class="offset-md-2 mt-2">
-    <input type="text" name="text" [(ngModel)]='name'>
-  </div>
 </div>
+
+<hr>
 <div class="row">
-    <div class="offset-md-2 mt-2">
-        <p>Value: {{ name }}</p>
-    </div>
+  <!-- <div class="col-md-10 offset-md-2 mt-2">
+  <app-tab1-child1 [childInput]=EETVariable.value></app-tab1-child1>
   </div> -->
+
+  <!-- uncomment below for output property -->
+  <div class="col-md-10 offset-md-2 mt-2">
+      <app-tab1-child1 [childInput]=EETVariable.value (childList)='addToParent($event)'></app-tab1-child1>
+      </div>
+</div>
+

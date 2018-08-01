@@ -1,3 +1,4 @@
+import { element } from 'protractor';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -11,7 +12,6 @@ export class Tab1Component implements OnInit {
   itemArray = [];
   buttonText = 'ADD';
   clearText = 'Remove';
-  name = '';
 
   constructor() { }
 
@@ -24,5 +24,12 @@ export class Tab1Component implements OnInit {
 
   removeItem(index: number) {
     this.itemArray.splice(index, 1);
+}
 
-}}
+  addToParent($event) {
+    $event.forEach(childItem => {
+      this.itemArray.push(childItem);
+    });
+  }
+
+}

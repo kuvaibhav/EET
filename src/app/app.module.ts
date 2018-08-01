@@ -8,13 +8,15 @@ import { HeaderComponent } from './header/header.component';
 import { Tab1Component } from './tabs/tab1/tab1.component';
 import { Tabs2Component } from './tabs/tabs2/tabs2.component';
 import { AppRoutingModule } from './app.routing';
+import { Tab1Child1Component } from './tabs/tab1/tab1-child1/tab1-child1.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     Tab1Component,
-    Tabs2Component
+    Tabs2Component,
+    Tab1Child1Component
   ],
   imports: [
     RouterModule,
