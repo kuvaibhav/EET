@@ -1,15 +1,23 @@
 <div class="row mt-4">
   <div class="col-md-4 offset-md-4">
-    {{'Session 1: Answers & Angular 5 Changes'}}
+    {{'Session 2: Continued from List App'}}
   </div>
 </div>
-<div class="row ml-4 mt-5">
-  <div class="col-md-12">
-    {{'Changing default node server hosting port from 4200'}}
+
+<hr>
+<div class="row">
+  <div class="offset-md-2 mt-2">
+    <input #EETVariable type="text" name="text">
+    <button [disabled]=false class="btn btn-primary ml-3" (click)="addToList(EETVariable.value)">{{buttonText}}</button>
   </div>
 </div>
-<div class="row ml-4 mt-2">
-    <div class="col-md-12">
-      {{' Angular.json is now Angular-cli.json and css library path change'}}
-    </div>
+<!-- <div class="mt-3" *ngFor="let item of itemArray; let i = index">
+<div class="row mt-3"  *ngIf="item">
+  <div class="col-md-1 offset-md-3 text-size">
+    {{item}}
   </div>
+  <div class="col-md-1">
+    <button class="btn btn-info" (click)="removeItem(i)">{{clearText}}</button>
+  </div>
+</div>
+</div> -->
