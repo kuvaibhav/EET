@@ -9,7 +9,7 @@ import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } fro
 export class Tab1Child1Component implements OnInit {
 
   @Input() childInput: string;
-  // @Output() childList = new EventEmitter<any>();
+  @Output() childList = new EventEmitter<any>();
   childListArray = [];
   constructor() { }
 
