@@ -1,3 +1,4 @@
+import { Tab3Component } from './tabs/tab3/tab3.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -16,6 +17,7 @@ import { Tab1Child1Component } from './tabs/tab1/tab1-child1/tab1-child1.compone
     HeaderComponent,
     Tab1Component,
     Tabs2Component,
+    Tab3Component,
     Tab1Child1Component
   ],
   imports: [
