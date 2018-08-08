@@ -5,16 +5,18 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-tab3',
   templateUrl: './tab3.component.html',
   styleUrls: ['./tab3.component.css'],
-  providers: [ColorService]
+  // providers: [ColorService]
 })
 
 
 export class Tab3Component implements OnInit {
 
   public isColorDanger = false;
-  constructor(private _colorService: ColorService) { }
+  public _colorService: any;
+  constructor() { }
 
   ngOnInit() {
+    this._colorService = new ColorService();
   }
 
   changeColor() {
