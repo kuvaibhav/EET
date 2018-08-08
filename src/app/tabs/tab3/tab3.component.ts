@@ -1,3 +1,4 @@
+import { ColorTypeService } from './../../services/color-type.service';
 import { ColorService } from './../../services/color.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -5,18 +6,17 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-tab3',
   templateUrl: './tab3.component.html',
   styleUrls: ['./tab3.component.css'],
-  // providers: [ColorService]
+  providers: [ColorService, ColorTypeService]
 })
 
 
 export class Tab3Component implements OnInit {
-
+  colorTypes: {name: string, color: string, addName: string, addColor: string}[] = [];
   public isColorDanger = false;
-  public _colorService: any;
-  constructor() { }
+  constructor(private _colorService: ColorService, private _colorTypeService: ColorTypeService) { }
 
   ngOnInit() {
-    this._colorService = new ColorService();
+    this.colorTypes = this._colorTypeService.types;
   }
 
   changeColor() {
