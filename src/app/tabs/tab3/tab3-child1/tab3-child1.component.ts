@@ -6,7 +6,7 @@ import { ColorService } from '../../../services/color.service';
   selector: 'app-tab3-child1',
   templateUrl: './tab3-child1.component.html',
   styleUrls: ['./tab3-child1.component.css'],
-  providers: [ColorService]
+  providers: []
 })
 export class Tab3Child1Component implements OnInit {
   @Input() name: string;
@@ -14,11 +14,17 @@ export class Tab3Child1Component implements OnInit {
   @Input() addName: string;
   @Input() addColor: string;
   public isColorDanger = true;
+  public siblingContent: string;
 
-  constructor(private _colorService: ColorService, private  _colorTypeService: ColorTypeService) { }
+  constructor(private _colorService: ColorService, private  _colorTypeService: ColorTypeService) {
+    this._colorService.showText.subscribe( (event: string) => {
+      this.siblingContent = event;
+    });
+   }
 
   ngOnInit() {
   }
+
 
   changeColor() {
     if (this.isColorDanger) {

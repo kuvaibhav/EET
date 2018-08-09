@@ -22,4 +22,9 @@ export class Tab3Child2Component implements OnInit {
     }
   }
 
+  passEvent() {
+    this._colorService.showText.emit('This text is passed from Child 2');
+    console.log('Event Paseed');
+  }
+
 }
