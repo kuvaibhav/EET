@@ -1,3 +1,24 @@
-<p>
-  tab3 works!
-</p>
+<div class="row mt-3 ml-4">
+  <div class="col-md-12">
+    <button [ngClass]="(isColorDanger)? 'btn btn-danger': 'btn btn-primary'" (click)="changeColor()">
+      Change button Color
+    </button></div>
+</div>
+<hr>
+<div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-12 col-md-offset-1">
+        <hr>
+        <app-tab3-child1
+          *ngFor="let type of colorTypes; let i = index"
+          [name] ='type.name'
+          [color]='type.color'
+          [addName]='type.addName' [addColor]='type.addColor'></app-tab3-child1>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="colorTypes.length == 0">
+<app-tab3-child1></app-tab3-child1>
+</div>
+<hr>
+<app-tab3-child2></app-tab3-child2>

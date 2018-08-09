@@ -1,0 +1,18 @@
+<div class="row mt-3 ml-4">
+    <div class="col-md-12">
+      <button [ngClass]="(isColorDanger)? 'btn btn-danger': 'btn btn-primary'" (click)="changeColor()">
+        Change button Color
+      </button></div>
+  </div>
+  <hr>
+  <div class="row mt-2 ml-4">
+    <div class="col-md-2">
+      <label>Pass Event to Child 1:</label>
+    </div>
+    <div class="col-md-3">
+      <button class="btn btn-primary" (click)="passEvent()">
+        {{'child 2 -> child 1'}}
+      </button>
+    </div>
+  </div>
+

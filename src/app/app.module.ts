@@ -10,6 +10,8 @@ import { Tab1Component } from './tabs/tab1/tab1.component';
 import { Tabs2Component } from './tabs/tabs2/tabs2.component';
 import { AppRoutingModule } from './app.routing';
 import { Tab1Child1Component } from './tabs/tab1/tab1-child1/tab1-child1.component';
+import { Tab3Child1Component } from './tabs/tab3/tab3-child1/tab3-child1.component';
+import { Tab3Child2Component } from './tabs/tab3/tab3-child2/tab3-child2.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { Tab1Child1Component } from './tabs/tab1/tab1-child1/tab1-child1.compone
     Tab1Component,
     Tabs2Component,
     Tab3Component,
-    Tab1Child1Component
+    Tab1Child1Component,
+    Tab3Child1Component,
+    Tab3Child2Component
   ],
   imports: [
     RouterModule,
