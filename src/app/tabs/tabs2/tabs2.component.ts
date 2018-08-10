@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Tabs2Component implements OnInit {
 
+  public textField = '';
+  public twoWayTextField = '';
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  detectChanges(value) {
+  this.textField = value;
   }
 
 }

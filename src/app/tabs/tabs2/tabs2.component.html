@@ -6,7 +6,8 @@
 <div class="row mt-3 ml-5">
   <div class="col-md-12">
     <div>
-      <input id='inputId' type='text' value='Angular 5'> <!-- value attribute is Angular 5-->
+      <input id='inputId' type='text' value='Angular 5'>
+      <!-- value attribute is Angular 5-->
     </div>
   </div>
 </div>
@@ -14,5 +15,23 @@
 <div class="row mt-3 ml-4">
   <div class="col-md-12">
     {{'Demonstrating difference between ngModel and javascript onInput'}}
+  </div>
+</div>
+<div class="row mt-3 ml-5">
+  <div class="col-md-2">
+    Input Binding Here:
+  </div>
+  <div class="col-md-10">
+    <input id="myId" type='text' (input)='detectChanges($event.target.value)'> {{textField}}
+  </div>
+</div>
+<div class="row mt-3 ml-4">
+</div>
+<div class="row mt-3 ml-5">
+  <div class="col-md-2">
+    2-Way Data-Binding Here:
+  </div>
+  <div class="col-md-10">
+    <input id="myId" type='text' [(ngModel)]="twoWayTextField" (input)='detectChanges($event.target.value)'> {{  }}
   </div>
 </div>
