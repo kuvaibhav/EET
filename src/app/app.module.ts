@@ -2,7 +2,7 @@ import { Tab3Component } from './tabs/tab3/tab3.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-// import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -23,7 +23,7 @@ import { Tab1Child1Component } from './tabs/tab1/tab1-child1/tab1-child1.compone
   imports: [
     RouterModule,
     AppRoutingModule,
-    // FormsModule,
+    FormsModule,
     BrowserModule
   ],
   providers: [],

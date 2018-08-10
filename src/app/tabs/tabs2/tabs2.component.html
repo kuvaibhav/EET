@@ -32,6 +32,7 @@
     2-Way Data-Binding Here:
   </div>
   <div class="col-md-10">
-    <input id="myId" type='text' [(ngModel)]="twoWayTextField" (input)='detectChanges($event.target.value)'> {{  }}
+    <input id="myNgModelId" type='text' [(ngModel)]="twoWayTextField">
+    {{ twoWayTextField }}
   </div>
 </div>
