@@ -1,8 +1,10 @@
 <div class="d-flex flex-column">
-  <div class="d-flex flex-row">
+  <div class="d-flex flex-row mt-3">
     <div><a routerLinkActive="tab-selected" routerLink="templateform" class="tabs">{{'Template Form'}}</a></div>
     <div><a routerLinkActive="tab-selected" routerLink="reactiveform"  class="tabs">{{'Reactive Form'}}</a></div>
   </div>
 </div>
+<div class="mt-3 ml-3">
+  <router-outlet></router-outlet>
+</div>
 
-<router-outlet></router-outlet>
