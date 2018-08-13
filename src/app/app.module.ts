@@ -12,6 +12,9 @@ import { AppRoutingModule } from './app.routing';
 import { Tab1Child1Component } from './tabs/tab1/tab1-child1/tab1-child1.component';
 import { Tab3Child1Component } from './tabs/tab3/tab3-child1/tab3-child1.component';
 import { Tab3Child2Component } from './tabs/tab3/tab3-child2/tab3-child2.component';
+import { Tab4Component } from './tabs/tab4/tab4.component';
+import { TemplateFormComponent } from './tabs/tab4/template-form/template-form.component';
+import { ReactiveFormComponent } from './tabs/tab4/reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { Tab3Child2Component } from './tabs/tab3/tab3-child2/tab3-child2.compone
     Tab3Component,
     Tab1Child1Component,
     Tab3Child1Component,
-    Tab3Child2Component
+    Tab3Child2Component,
+    Tab4Component,
+    TemplateFormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     RouterModule,

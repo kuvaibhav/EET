@@ -1,0 +1,44 @@
+.header-background {
+  position: relative;
+  z-index: 1;
+  height: 60px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);;
+  width: 100%;
+}
+
+.shade-height {
+  height: 36px;
+  background: #eaeaea;;
+}
+
+.tabs {
+  margin-left: 15px;
+  margin-top: 2px;
+  margin-right: 35px;
+  text-align: left;
+  color: black;
+  font-size: 14;
+  text-decoration: none;
+}
+
+.tabs:active {
+  border-bottom-style: solid;
+  border-bottom-color: black;
+}
+
+.tabs:hover {
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  cursor: pointer;
+}
+
+
+.tab-selected {
+  border-bottom-style: solid;
+  border-bottom-color: black;
+}
+
+.vertical-align {
+  margin-top: 20px;
+}
+
