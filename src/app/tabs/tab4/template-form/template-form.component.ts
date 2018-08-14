@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -8,10 +8,16 @@ import { NgForm } from '@angular/forms';
 })
 export class TemplateFormComponent {
 
+  @ViewChild('f') loginForm: NgForm;
+
   constructor() { }
 
-  onSubmit(form: NgForm) {
-    console.log(form);
+  // onSubmit(form: NgForm) {
+  //   console.log(form);
+  // }
+
+  onSubmit() {
+    console.log(this.loginForm);
   }
 
 }
