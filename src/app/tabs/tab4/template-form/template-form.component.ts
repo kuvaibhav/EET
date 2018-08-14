@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
 export class TemplateFormComponent {
 
   @ViewChild('f') loginForm: NgForm;
+  public userName = 'user';
 
   constructor() { }
 
