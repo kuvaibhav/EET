@@ -19,6 +19,8 @@ export class TemplateFormComponent {
 
   onSubmit() {
     console.log(this.loginForm);
+    // // this.loginForm.reset();
+    // this.loginForm.controls.userData.reset();
   }
 
 }
