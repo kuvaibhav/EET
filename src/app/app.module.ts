@@ -16,6 +16,8 @@ import { Tab4Component } from './tabs/tab4/tab4.component';
 import { TemplateFormComponent } from './tabs/tab4/template-form/template-form.component';
 import { ReactiveFormComponent } from './tabs/tab4/reactive-form/reactive-form.component';
 import { PipeComponent } from './tabs/tab4/pipe/pipe.component';
+import { ShortenPipe } from './tabs/tab4/pipe/shorten.pipe';
+import { FilterPipe } from './tabs/tab4/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { PipeComponent } from './tabs/tab4/pipe/pipe.component';
     Tab4Component,
     TemplateFormComponent,
     ReactiveFormComponent,
-    PipeComponent
+    PipeComponent,
+    ShortenPipe,
+    FilterPipe
   ],
   imports: [
     RouterModule,
