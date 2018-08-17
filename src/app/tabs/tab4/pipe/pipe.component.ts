@@ -47,4 +47,13 @@ public filteredStatus = '';
     };
   }
 
+  addEnv() {
+    this.servers.push({
+      instanceType: 'small',
+      name: 'Local',
+      status: 'offline',
+      started: new Date(15, 1, 2017)
+    });
+  }
+
 }
