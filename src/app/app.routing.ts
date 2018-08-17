@@ -1,3 +1,4 @@
+import { PipeComponent } from './tabs/tab4/pipe/pipe.component';
 import { TemplateFormComponent } from './tabs/tab4/template-form/template-form.component';
 import { Tab3Component } from './tabs/tab3/tab3.component';
 import { HeaderComponent } from './header/header.component';
@@ -23,7 +24,8 @@ export const ROUTES: Routes = [
     component: Tab4Component,
     children: [
       { path: 'templateform', component: TemplateFormComponent },
-      { path: 'reactiveform', component: ReactiveFormComponent }
+      { path: 'reactiveform', component: ReactiveFormComponent },
+      { path: 'pipe', component: PipeComponent}
     ]
   }
 ];

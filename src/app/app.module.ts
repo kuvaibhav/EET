@@ -15,6 +15,7 @@ import { Tab3Child2Component } from './tabs/tab3/tab3-child2/tab3-child2.compone
 import { Tab4Component } from './tabs/tab4/tab4.component';
 import { TemplateFormComponent } from './tabs/tab4/template-form/template-form.component';
 import { ReactiveFormComponent } from './tabs/tab4/reactive-form/reactive-form.component';
+import { PipeComponent } from './tabs/tab4/pipe/pipe.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ReactiveFormComponent } from './tabs/tab4/reactive-form/reactive-form.c
     Tab3Child2Component,
     Tab4Component,
     TemplateFormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    PipeComponent
   ],
   imports: [
     RouterModule,
