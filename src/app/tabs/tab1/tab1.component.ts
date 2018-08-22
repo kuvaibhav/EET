@@ -1,5 +1,6 @@
 import { element } from 'protractor';
 import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-tab1',
@@ -17,7 +18,10 @@ export class Tab1Component implements OnInit {
   buttonText = 'ADD';
   clearText = 'Remove';
 
-  constructor(private renderer2: Renderer2) { }
+  constructor(private renderer2: Renderer2,
+     private router: Router,
+     private route: ActivatedRoute
+    ) { }
 
   ngOnInit() {
   }
@@ -27,22 +31,22 @@ export class Tab1Component implements OnInit {
   //   this.itemArray.push(itemName);
   // }
 
-  // addToList(listValue: string) {
-  //   console.log(this.itemName.nativeElement.value);
-  //   console.log(this.addBtn);
-  //   // this.addBtn.nativeElement.style.backgroundColor = 'red';
-  //   // this.renderer2.setStyle(this.addBtn.nativeElement, 'background-color', 'red');
-  //   this.itemArray.push(this.itemName.nativeElement.value);
-  // }
+  addToList(listValue: string) {
+    console.log(this.itemName.nativeElement.value);
+    console.log(this.addBtn);
+    this.addBtn.nativeElement.style.backgroundColor = 'red';
+    this.renderer2.setStyle(this.addBtn.nativeElement, 'background-color', 'red');
+    this.itemArray.push(this.itemName.nativeElement.value);
+  }
 
   removeItem(index: number) {
     this.itemArray.splice(index, 1);
 }
 
-  // addToParent($event) {
-  //   $event.forEach(childItem => {
-  //     this.itemArray.push(childItem);
-  //   });
-  // }
+  onNaviagteClick() {
+    // this.router.navigate(['/tab4']);
+    // this.router.navigate(['tab4'], {relativeTo: this.route});
+    this.router.navigate(['tab4'], {relativeTo: this.route, queryParams: {id :  '123'}});
+  }
 
 }

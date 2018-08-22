@@ -2,7 +2,7 @@ import { Tab3Component } from './tabs/tab3/tab3.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-// import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -15,6 +15,7 @@ import { Tab3Child2Component } from './tabs/tab3/tab3-child2/tab3-child2.compone
 import { Tab4Component } from './tabs/tab4/tab4.component';
 import { TemplateFormComponent } from './tabs/tab4/template-form/template-form.component';
 import { ReactiveFormComponent } from './tabs/tab4/reactive-form/reactive-form.component';
+import { AuthGuard } from './services/AuthGuard';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { ReactiveFormComponent } from './tabs/tab4/reactive-form/reactive-form.c
     // FormsModule,
     BrowserModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
