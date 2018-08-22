@@ -34,7 +34,7 @@ import { AuthGuard } from './services/AuthGuard';
   imports: [
     RouterModule,
     AppRoutingModule,
-    // FormsModule,
+    FormsModule,
     BrowserModule
   ],
   providers: [AuthGuard],

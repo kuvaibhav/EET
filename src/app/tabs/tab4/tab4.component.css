@@ -16,26 +16,26 @@
   margin-top: 2px;
   margin-right: 35px;
   text-align: left;
-  color: black;
+  color: rgba(88, 17, 102, 0.986);
   font-size: 14;
   text-decoration: none;
 }
 
 .tabs:active {
   border-bottom-style: solid;
-  border-bottom-color: black;
+  border-bottom-color: rgba(88, 17, 102, 0.986);
 }
 
 .tabs:hover {
   border-bottom-style: solid;
-  border-bottom-color: black;
+  border-bottom-color: rgba(88, 17, 102, 0.986);
   cursor: pointer;
 }
 
 
 .tab-selected {
   border-bottom-style: solid;
-  border-bottom-color: black;
+  border-bottom-color: rgba(88, 17, 102, 0.986);
 }
 
 .vertical-align {
