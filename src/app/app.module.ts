@@ -1,11 +1,15 @@
+import { ToasterService } from './services/toaster.service';
+import { ToastrModule } from 'ngx-toastr';
+import { EETHttpInterceptor } from './services/eet.http.interceptor';
 import { Tab4Service } from './tabs/tab4/tab4.service';
 import { Tab3Component } from './tabs/tab3/tab3.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { Tab1Component } from './tabs/tab1/tab1.component';
@@ -38,12 +42,20 @@ import { AuthGuard } from './services/AuthGuard';
     AppRoutingModule,
     FormsModule,
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastrModule.forRoot()
   ],
   providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: EETHttpInterceptor,
+      multi: true
+    },
     AuthGuard,
-    Tab4Service
+    Tab4Service,
+    ToasterService
   ],
   bootstrap: [AppComponent]
 })
