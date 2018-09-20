@@ -1,8 +1,10 @@
+import { Tab4Service } from './tabs/tab4/tab4.service';
 import { Tab3Component } from './tabs/tab3/tab3.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -35,9 +37,14 @@ import { AuthGuard } from './services/AuthGuard';
     RouterModule,
     AppRoutingModule,
     FormsModule,
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [AuthGuard],
+  providers: [
+    AuthGuard,
+    Tab4Service
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,7 +15,7 @@ export const ROUTES: Routes = [
   { path: 'tab3', component: Tab3Component },
   {
     path: 'tab4',
-    component: Tab4Component, canActivate: [AuthGuard],
+    component: Tab4Component,
     children: [
       { path: 'templateform', component: TemplateFormComponent },
       { path: 'reactiveform', component: ReactiveFormComponent },
