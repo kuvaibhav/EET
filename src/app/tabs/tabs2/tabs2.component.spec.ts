@@ -19,5 +19,4 @@ describe('Tabs2Component', () => {
     fixture.detectChanges();
   });
 
-
 });

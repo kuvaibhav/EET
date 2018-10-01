@@ -2,6 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 import { Tab1Component } from './tab1.component';
+import { Router, ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/empty';
+import { Subject } from 'rxjs/Subject';
 
 // describe('Tab1Component', () => {
 //   let component: Tab1Component;
@@ -28,15 +32,31 @@ import { Tab1Component } from './tab1.component';
 describe('Tab 1 Component', () => {
   let component: Tab1Component;
   let fixture: ComponentFixture<Tab1Component>;
+  let router: RouterStub;
+  let route: ActivatedRouteStub;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
-      declarations: [Tab1Component]
+      declarations: [Tab1Component],
+      providers: [
+        { provide: Router, useClass: RouterStub },
+        { provide: ActivatedRoute, useClass: ActivatedRouteStub },
+        {
+          provide: ActivatedRoute,
+          useValue: {
+              queryParams: {
+                id: '123'
+              },
+          },
+        },
+      ]
     }).overrideTemplate(Tab1Component, '')
 
     fixture = TestBed.createComponent(Tab1Component);
     component = fixture.componentInstance;
+    router = TestBed.get(Router);
+    route = TestBed.get(ActivatedRoute);
 
   });
 
@@ -69,4 +89,36 @@ describe('Tab 1 Component', () => {
     expect(component.itemArray.length).toBe(2);
     expect(component.itemArray[length - 1]).toBeUndefined();
   });
+
+  it('should navigate to Tab4 on button click', () => {
+    // GIVEN
+    let spy = spyOn(router, 'navigate');
+
+    // WHEN
+    component.onNaviagteClick();
+
+    // THEN
+    expect(spy).toHaveBeenCalledWith((['tab4']), {relativeTo: route});
+  });
 });
+
+export class ActivatedRouteStub {
+
+  params: Observable<any> = Observable.empty();
+  private subject = new Subject();
+
+  public push(value) {
+    this.subject.next(value);
+  }
+
+  get queryParams() {
+    return this.subject.asObservable();
+  }
+
+}
+
+export class RouterStub {
+  navigate(param) {
+
+  }
+}
