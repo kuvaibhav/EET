@@ -1,3 +1,4 @@
+import { Tab4Service } from './../tab4/tab4.service';
 import { element } from 'protractor';
 import { Component, OnInit, ViewChild, ElementRef, Renderer2 } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -17,10 +18,12 @@ export class Tab1Component implements OnInit {
   itemArray = [];
   buttonText = 'ADD';
   clearText = 'Remove';
+  cities: any;
 
   constructor(private renderer2: Renderer2,
      private router: Router,
-     private route: ActivatedRoute
+     private route: ActivatedRoute,
+     private tab4Service: Tab4Service
     ) { }
 
   ngOnInit() {
@@ -29,6 +32,12 @@ export class Tab1Component implements OnInit {
   addToList(itemName: string) {
     console.log(itemName);
     this.itemArray.push(itemName);
+  }
+
+  getCity() {
+    this.tab4Service.fetchCities().subscribe(response => {
+      this.cities = response;
+    });
   }
 
   // addToList(listValue: string) {
