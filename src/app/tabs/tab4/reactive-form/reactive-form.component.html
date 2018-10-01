@@ -1,0 +1,39 @@
+<form [formGroup]="custInfoForm" class="orient">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+    <span *ngIf="!custInfoForm.get('email').valid && custInfoForm.get('email').touched" class="text-danger help-block">
+    <span *ngIf="custInfoForm.get('email').errors['required']"> Email address is required </span>
+    <span *ngIf="custInfoForm.get('email').value && custInfoForm.get('email').errors['email']"> Please enter a valid email address</span>
+    <span *ngIf="custInfoForm.get('email').errors['restrictedEmailIdUsed']"> Email address already in use </span>
+  </span>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" formControlName="gender" type="radio" name="gender" id="exampleRadios1" value="male">
+    <label class="form-check-label" for="exampleRadios1">
+      Male
+    </label>
+  </div>
+  <div class="form-check mb-2">
+    <input class="form-check-input" formControlName="gender" type="radio" name="gender" id="exampleRadios2" value="female">
+    <label class="form-check-label" for="exampleRadios2">
+      Female
+    </label>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">Select City</label>
+    <select id="exampleFormControlSelect1" class="form-control" formControlName="city">
+      <option *ngFor="let city of cities; let i = index" [ngValue]="city.id">{{city.name}}</option>
+    </select>
+  </div>
+  <h4>Add Interests</h4>
+  <div formArrayName="addInterests">
+      <button type="button" class="btn btn-default mb-3" (click)="onAddInterests()">Add Interests</button>
+      <div class="form-group" *ngFor="let interest of custInfoForm.get('addInterests').controls; let i = index">
+        <input type="text" class="form-control" [formControlName]="i">
+      </div>
+    </div>
+  <div>
+    <button type="submit" (click)="onSubmit()" class="btn btn-primary">Submit</button>
+  </div>
+</form>

@@ -11,12 +11,20 @@
       </div>
     </div>
     <div class="d-flex flex-row">
-      <div><a routerLinkActive="tab-selected" routerLink="" class="tabs">{{'Tab 1'}}</a></div>
-      <div><a routerLinkActive="tab-selected" routerLink="tab2"  class="tabs">{{'Tab 2'}}</a></div>
-      <div><a routerLinkActive="tab-selected" routerLink="tab3"  class="tabs">{{'Tab 3'}}</a></div>
+      <!-- <div><a href=""  class="tabs">{{'Tab 1'}}</a></div>
+      <div><a href="/tab2"  class="tabs">{{'Tab 2'}}</a></div>
+      <div><a href="/tab3"  class="tabs">{{'Tab 3'}}</a></div>
+      <div><a href="/tab4"  class="tabs">{{'Tab 4'}}</a></div> -->
+      <div><a routerLinkActive="tab-selected" routerLink="" class="tabs" [routerLinkActiveOptions]="{exact: true}">{{'Tab 1'}}</a></div>
+      <div><a routerLinkActive="tab-selected" routerLink="/tab2"  class="tabs">{{'Tab 2'}}</a></div>
+      <div><a routerLinkActive="tab-selected" routerLink="/tab3"  class="tabs">{{'Tab 3'}}</a></div>
+      <div><a routerLinkActive="tab-selected" routerLink="/tab4"  class="tabs">{{'Tab 4'}}</a></div>
+      <!-- <div><a [hidden]="user !=='admin'? true : false" routerLinkActive="tab-selected" routerLink="tab4"  class="tabs">{{'Tab 4'}}</a></div> -->
     </div>
   </div>
 </header>
 <section class="row shade-height">
   <div class="col-md-12"></div>
 </section>
+
+<router-outlet></router-outlet>

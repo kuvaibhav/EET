@@ -8,9 +8,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+  user: string;
+
   constructor() { }
 
   ngOnInit() {
+    this.user = 'enduser';
   }
 
 }
