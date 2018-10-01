@@ -22,10 +22,10 @@ export class Tab1Component implements OnInit {
   ngOnInit() {
   }
 
-  // addToList(itemName: string) {
-  //   console.log(itemName);
-  //   this.itemArray.push(itemName);
-  // }
+  addToList(itemName: string) {
+    console.log(itemName);
+    this.itemArray.push(itemName);
+  }
 
   // addToList(listValue: string) {
   //   console.log(this.itemName.nativeElement.value);
