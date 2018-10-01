@@ -1,8 +1,10 @@
+import { Tab2Service } from './services/tab2.service';
 import { Tab3Component } from './tabs/tab3/tab3.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -40,9 +42,10 @@ import { FilterPipe } from './tabs/tab4/filter.pipe';
     RouterModule,
     AppRoutingModule,
     FormsModule,
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [Tab2Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
